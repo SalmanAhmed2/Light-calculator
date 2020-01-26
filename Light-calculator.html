@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function number(btnnum){
+         document.getElementById('input').value += btnnum;
+     }
+ 
+     function ce(){
+         var a = document.getElementById('input').value
+         document.getElementById('input').value = a.substring(0, a.length -1);
+     }
+ 
+     function cleear(){
+         document.getElementById('input').value='';
+     }
+     
+     function answer(){
+         var cexp = document.getElementById('input').value;
+         var ans = eval(cexp);
+         document.getElementById('input').value = ans;
+     }
+ </script>
+ 
+ <style>
+     .main{
+        width: 250px;
+        height: 440px;
+        border: none;
+        background-color: whitesmoke;
+        border-radius: 10px;
+        }
+        input{
+        width: 245px;
+        height: 150px;
+        border-radius: 8px;
+        background-color: whitesmoke;
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: darkcyan;
+    }
+        button{
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+        font-size: 20px;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: whitesmoke;
+        color: black;
+        margin: 3px;
+        border: none;
+    }
+    button:hover{
+    background-color: skyblue;
+    }
+    button:nth-child(4n+5){
+        color: darkcyan;
+    }
+
+
+ </style>
+<body>
+    
+<div class="main">
+    <input type="text" id="input" disabled>
+    <button onclick="cleear()" >C</button>
+    <button onclick="number('%')" >%</button>
+    <button onclick="ce()" >⌫</button>
+    <button onclick="number('/')">÷</button>
+    <button onclick="number(7)" >7</button>
+    <button onclick="number(8)" >8</button>
+    <button onclick="number(9)" >9</button>
+    <button onclick="number('*')">x</button>
+    <button onclick="number(4)" >4</button>
+    <button onclick="number(5)" >5</button>
+    <button onclick="number(6)" >6</button>
+    <button onclick="number('-')">-</button>
+    <button onclick="number(1)" >1</button>
+    <button onclick="number(2)" >2</button>
+    <button onclick="number(3)" >3</button>
+    <button onclick="number('+')">+</button>
+    <button onclick="number(0)" >0</button>
+    <button onclick="number(00)" >00</button>
+    <button onclick="number(.)" >.</button>
+    <button onclick="answer()">=</button>
+</div>
+</body>
+</html>
